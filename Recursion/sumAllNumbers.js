@@ -1,12 +1,7 @@
 function sumRange(n) {
-  let sum = 0;
-  if (n === 0) {
-    return sum;
+  if (n === 1) {
+    return n;
   } else {
-    sum += n;
-    sumRange(n-1);
+    return n + sumRange(n-1);
   }
-  return sum
 }
-    
-    
