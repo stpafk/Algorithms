@@ -19,4 +19,14 @@ function fib(n) {
     return arr;
 }
 
-fib(10)
+var arr = []
+function recursionFib(n) {
+    if (n <= 1) {
+        return n;
+    };
+    
+    return recursionFib(n - 1) + recursionFib(n - 2);
+
+}
+
+console.log(recursionFib(9));
