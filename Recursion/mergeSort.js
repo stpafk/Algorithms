@@ -1,6 +1,6 @@
 
 function merge(left, right) {
-    const mergedArray = []
+    const mergedArray = [];
     
     while (left.length  && right.length ) {
         if (left[0] < right[0]) {
