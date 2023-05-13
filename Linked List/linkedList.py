@@ -57,13 +57,11 @@ class LinkedList:
     def contains(self, item):
         curr = self.head
 
-        if curr.value == item:
-            return True
-
         while curr.next is not None:
-            curr = curr.next
             if curr.value == item:
                 return True
+            
+            curr = curr.next
 
         return False
 
