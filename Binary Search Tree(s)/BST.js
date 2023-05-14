@@ -18,10 +18,12 @@ class BinarySearch {
         }
 
         const array = new Set(arr);
-        array = array.sort(function(a, b) {return a - b});
-        arr.forEach(element => {
-            let node = new Node(element);
-        });
+        const nodes = array.map(data => new Node(data));
+
+        console.log(arr[0])
+        this.root = arr[0]
     }
 
 }
+
+let tree = new BinarySearch([0, 1, 2, 3])
