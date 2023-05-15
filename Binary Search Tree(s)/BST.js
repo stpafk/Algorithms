@@ -1,29 +1,50 @@
 
-class Node {
-    constructor(data) {
-        this.value = data;
-        this.left = null;
-        this.right = null;
+function Node(data, left= null, right=null) {
+    return {
+        data: data,
+        left: left,
+        right: right
     }
 }
 
-class BinarySearch {
-    constructor(array) {
-        this.root = buildTree(array);
+function BuildTree(array, start=0, end=array.length - 1) {
+    if (start > end) {
+        return null
     }
 
-    buildTree(arr) {
-        if (arr.length === 0) {
-            return;
-        }
+    const mid = parseInt((start + end) / 2);
+    const root = Node(array[mid])
 
-        const array = new Set(arr);
-        const nodes = array.map(data => new Node(data));
+    root.left = BuildTree(array, start, mid - 1);
+    root.right = BuildTree(array, mid + 1, end);
 
-        console.log(arr[0])
-        this.root = arr[0]
+    return root
+
+ }
+
+function Tree(arr) {
+    let Arr;
+    if (Array.isArray(arr)) {
+        Arr = [...new Set(arr.sort((a, b) => a - b))];
     }
 
+    return {
+        root: BuildTree(arr),
+        
+        insert(value, root = this.root) {
+            if (root === null) {
+                root = Node(value);
+                return root;
+            }
+
+            if (value < root.data) {
+                root.left = this.insert(value, root.left);
+            } else if (value > root.data) {
+                root.right = this.insert(value, root.right);
+            }
+
+            return root
+        },
+        
+    }
 }
-
-let tree = new BinarySearch([0, 1, 2, 3])
