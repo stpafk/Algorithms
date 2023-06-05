@@ -1,4 +1,4 @@
-#in this algorithm we should find the target value in a O(log n) time complexity. In that sense, I used binary search to traverse the sorted array.
+#in this algorithm we should find the target value in a O(log n) time complexity. So, I used binary search to traverse the sorted array.
 def searchInsert(self, nums, target):
     #define left and right
     left = 0
