@@ -1,6 +1,6 @@
 
 
-function binarySearch(haystack: number[], needle: number) {
+function binarySearch(haystack: number[], needle: number): number {
 
     let left = 0;
     let right = haystack.length - 1;

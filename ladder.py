@@ -1,5 +1,5 @@
 
-def ladder(s, n):
+def ladder(s, n) --> str:
 
     string = ""
     index = n 
