@@ -14,7 +14,7 @@ class Stack<T> {
     }
 
     peek(): T | undefined {
-
+        return this.head?.value;
     }
 
     pop(): T | undefined {
